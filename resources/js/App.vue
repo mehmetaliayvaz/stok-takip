@@ -1,5 +1,5 @@
 <template>
-    <div>vue selam</div>
+    <div class="text-xl text-red-500">vue</div>
 </template>
 
 <script setup></script>
