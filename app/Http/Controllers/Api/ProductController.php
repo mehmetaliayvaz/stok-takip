@@ -8,9 +8,6 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $items = Product::all();
@@ -19,31 +16,26 @@ class ProductController extends Controller
         ], 200);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        $item = new Product;
-        $item->name = $request->name;
-        $item->description = $request->description;
-        $item->price = $request->price;
-        $item->stock = $request->stock;
-        $item->save();
+        $product = new Product;
+        $product->name = $request->name;
+        $product->description = $request->description;
+        $product->stock = $request->stock;
+        $product->price = $request->price;
+        $product->save();
+
         return response()->json([
-            'data' => $item
-        ], 201);
+            'data' => $product
+        ], 200);
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id)
     {
-        $item = Product::find($id);
-        if ($item) {
+        $product = Product::find($id);
+        if ($product) {
             return response()->json([
-                'data' => $item
+                'data' => $product
             ], 200);
         } else {
             return response()->json([
@@ -52,20 +44,17 @@ class ProductController extends Controller
         }
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
-        $item = Product::find($id);
-        if ($item) {
-            $item->name = $request->name;
-            $item->description = $request->description;
-            $item->price = $request->price;
-            $item->stock = $request->stock;
-            $item->save();
+        $product = Product::find($id);
+        if ($product) {
+            $product->name = $request->name;
+            $product->description = $request->description;
+            $product->price = $request->price;
+            $product->stock = $request->stock;
+            $product->save();
             return response()->json([
-                'data' => $item
+                'data' => $product
             ], 200);
         } else {
             return response()->json([
@@ -74,14 +63,11 @@ class ProductController extends Controller
         }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
-        $item = Product::find($id);
-        if ($item) {
-            $item->delete();
+        $product = Product::find($id);
+        if ($product) {
+            $product->delete();
             return response()->json([
                 'message' => 'Product deleted'
             ], 200);
