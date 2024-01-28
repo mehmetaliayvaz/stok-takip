@@ -1,11 +1,9 @@
-<template>
-    <div>
-        <Button label="Submit" />
-    </div>
-</template>
-
 <script setup>
-import Button from "primevue/button";
+import DefaultLayout from "./layouts/DefaultLayout.vue"
 </script>
+
+<template>
+  <DefaultLayout />
+</template>
 
 <style></style>
