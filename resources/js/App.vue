@@ -1,7 +1,11 @@
 <template>
-    <div class="text-xl text-red-500">vue</div>
+    <div>
+        <Button label="Submit" />
+    </div>
 </template>
 
-<script setup></script>
+<script setup>
+import Button from "primevue/button";
+</script>
 
 <style></style>
