@@ -1,14 +1,18 @@
 @layer tailwind-base, primevue, tailwind-utilities;
 
 @layer tailwind-base {
-    @tailwind base;
+  @tailwind base;
 }
 
 @layer tailwind-utilities {
-    @tailwind components;
-    @tailwind utilities;
+  @tailwind components;
+  @tailwind utilities;
 }
 
-:root {
-    --primary-color: #0d6efd;
+.page-wrapper {
+  @apply my-20 w-full;
+}
+
+.container {
+  @apply max-w-[1400px];
 }
